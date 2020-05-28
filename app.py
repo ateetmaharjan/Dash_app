@@ -1,6 +1,5 @@
 ###############################################################################
 # import required packages
-import flask
 import pandas as pd
 import numpy as np
 import dash_html_components as html
@@ -176,5 +175,6 @@ if __name__ == '__main__':
     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
     # gunicorn -b 0.0.0.0:8050 index:app.server
     app.run_server(port=8050,
-                   host='0.0.0.0', debug=True
+                   host='0.0.0.0',
+                   debug=True
                    )
