@@ -88,36 +88,51 @@ app.layout = html.Div([
             "The timeseries plot shows daily load (in kW) measurements for 5 geographic sub-areas (e.g., residential and industrial zones) from January 2004 to June 2008.")
     ],
         style={'padding': '50px',
-               'backgroundColor': 'yellow'}),
+               'backgroundColor': '#fbebebdd',
+               'margin-top': '-90px',
+               'margin-bottom': '-30px'}
+    ),
 
     # dropdown menu options
-    html.P(
-        [html.Label("Choose each zone to display energy load plot"),
-         dcc.Dropdown(id='opt',
-                      options=opts,
-                      value='zone_1')],
-        style={
-            'width': '400px',
-            'fontSize': '20px',
-                        'padding-left': '100px',
-                        'display': 'inline-block'}),
+    html.Div(
+        html.P(
+            [html.Label("Choose each zone to display energy load plot"),
+             dcc.Dropdown(id='opt',
+                          options=opts,
+                          value='zone_1')],
+            style={
+                'width': '400px',
+                'fontSize': '20px',
+                'padding-left': '75px',
+                'display': 'inline-block'}),
+        style={'background': '#F2F4DF'}
+    ),
 
     # adding a plot
     dcc.Graph(id='plot', figure=fig),
 
     # add range slider
-    html.P([
-        html.Label("Time Period"),
-        dcc.RangeSlider(id='slider',
-                        marks={i: dates[i] for i in range(0, 15)},
-                        min=0,
-                        max=14,
-                        value=[0, 14])
-    ], style={'width': '80%',
-              'fontSize': '20px',
-              'padding-left': '100px',
-                          'display': 'inline-block'})
-])
+    html.Div(
+        html.P([
+            # html.Label("Time Period"÷,
+            dcc.RangeSlider(id='slider',
+                            marks={i: dates[i] for i in range(0, 15)},
+                            min=0,
+                            max=14,
+                            value=[0, 14])
+        ], style={'width': '95%',
+                  'fontSize': '20px',
+                  'padding-left': '2%',
+                  'padding-right': '4%',
+                  'display': 'inline-block'}),
+        style={'background': '#F2F4DF'}
+    )
+
+],
+    style={'padding': '50px',
+           'backgroundColor': 'white'
+           }
+)
 ###############################################################################
 
 # Step 5. Add callback functions
@@ -171,6 +186,7 @@ if __name__ == "__main__":
     app.run_server()
 
 
+# to check the app on your pc
 # if __name__ == '__main__':
 #     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
 #     # gunicorn -b 0.0.0.0:8050 index:app.server
