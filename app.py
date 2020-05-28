@@ -85,7 +85,7 @@ app.layout = html.Div([
     html.Div([
         html.H1("Daily load demand for each zone"),
         html.P(
-            "The timeseries plot shows daily load (in kW) measurements for 5 geographic sub-areas (e.g., residential and industrial zones) from January 2015 to June 2019.")
+            "The timeseries plot shows daily load (in kW) measurements for 5 geographic sub-areas (e.g., residential and industrial zones) from January 2004 to June 2008.")
     ],
         style={'padding': '50px',
                'backgroundColor': 'yellow'}),
