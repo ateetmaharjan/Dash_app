@@ -171,19 +171,9 @@ if __name__ == "__main__":
     app.run_server()
 
 
-<<<<<<< HEAD
-if __name__ == '__main__':
-    # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
-    # gunicorn -b 0.0.0.0:8050 index:app.server
-    app.run_server(port=8050,
-                   host='0.0.0.0',
-                   debug=True
-                   )
-=======
 # if __name__ == '__main__':
 #     # For Development only, otherwise use gunicorn or uwsgi to launch, e.g.
 #     # gunicorn -b 0.0.0.0:8050 index:app.server
 #     app.run_server(port=8050,
 #                    host='0.0.0.0', debug=True
 #                    )
->>>>>>> master
